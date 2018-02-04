@@ -23,7 +23,7 @@ def get_version_from_recipe():
 
 
 def get_default_vars():
-    username = os.getenv("CONAN_USERNAME", "bincrafters")
+    username = os.getenv("CONAN_USERNAME", "vkrapivin")
     channel = os.getenv("CONAN_CHANNEL", "testing")
     version = get_version_from_recipe()
     return username, channel, version
@@ -67,6 +67,5 @@ if __name__ == "__main__":
         remotes=upload,  # while redundant, this moves bincrafters remote to position 0
         upload_only_when_stable=True,
         stable_branch_pattern="stable/*")
-
-    builder.add_common_builds(shared_option_name=name + ":shared")
+    
     builder.run()

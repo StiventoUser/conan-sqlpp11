@@ -1,30 +1,26 @@
-[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/sqlpp11%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/sqlpp11%3Abincrafters/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/vkrapivin/conan/sqlpp11%3Avkrapivin/images/download.svg) ](https://bintray.com/vkrapivin/conan/sqlpp11%3Avkrapivin/_latestVersion)
 [![Build Status](https://travis-ci.org/StiventoUser/conan-sqlpp11.svg?branch=testing%2F0.54)](https://travis-ci.org/StiventoUser/conan-sqlpp11)
 [![Build status](https://ci.appveyor.com/api/projects/status/fgs03a416pcxi8jd?svg=true)](https://ci.appveyor.com/project/StiventoUser/conan-sqlpp11)
 
 [Conan.io](https://conan.io) package for [sqlpp11](https://github.com/rbock/sqlpp11) project
-
-## TODO 
  
-Update information below.
- 
-The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/public-conan/sqlpp11%3Abincrafters).
+The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/vkrapivin/conan/sqlpp11%3Avkrapivin).
 
 ## For Users: Use this package
 
 ### Basic setup
 
-    $ conan install sqlpp11/0.52@bincrafters/stable
+    $ conan install sqlpp11/0.54@vkrapivin/testing
 
 ### Project setup
 
 If you handle multiple dependencies in your project is better to add a *conanfile.txt*
 
     [requires]
-    sqlpp11/0.52@bincrafters/stable
+    sqlpp11/0.54@vkrapivin/testing
 
     [generators]
-    txt
+    cmake
 
 Complete the installation of requirements for your project running:
 
@@ -40,15 +36,15 @@ The example below shows the commands used to publish to bincrafters conan reposi
 
 The following command both runs all the steps of the conan file, and publishes the package to the local system cache.  This includes downloading dependencies from "build_requires" and "requires" , and then running the build() method.
 
-    $ conan create bincrafters/stable
+    $ conan create vkrapivin/testing
 
 ## Add Remote
 
-    $ conan remote add bincrafters "https://api.bintray.com/conan/bincrafters/public-conan"
+    $ conan remote add vkrapivin https://api.bintray.com/conan/vkrapivin/conan 
 
 ## Upload
 
-    $ conan upload sqlpp11/0.52@bincrafters/stable --all -r bincrafters
+    $ conan upload sqlpp11/0.54@vkrapivin/testing --all -r vkrapivin
 
 ## License
 [LICENSE_TYPE](LICENSE)

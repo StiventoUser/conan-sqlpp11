@@ -24,6 +24,7 @@ class sqlpp11Conan(ConanFile):
     def build(self):        
         cmake = CMake(self)
         cmake.definitions["CMAKE_MODULE_PATH"] = ("%s;%s/cmake/Modules/" % (cmake.definitions.get("CMAKE_MODULE_PATH", ""), self.source_folder)).replace('\\', '/')
+        cmake.definitions["ENABLE_TESTS"] = False
         cmake.definitions["HinnantDate_ROOT_DIR"] = self.deps_cpp_info["date"].rootpath
         # Boost (preprocessor) of version 1.50 is only required for code generation.
         #cmake.definitions["BOOST_ROOT_DIR"] = self.deps_cpp_info["boost"].rootpath

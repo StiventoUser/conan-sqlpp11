@@ -38,4 +38,4 @@ class sqlpp11Conan(ConanFile):
         self.copy("*", dst="scripts", src="sqlpp11/scripts", keep_path=False)
         
     def package_info(self):
-        self.user_info.DLL2CPP = os.path.join(self.package_folder, "scripts", "ddl2cpp")
+        self.user_info.DDL2CPP = os.path.join(self.package_folder, "scripts", "ddl2cpp")

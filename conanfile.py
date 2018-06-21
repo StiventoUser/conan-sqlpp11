@@ -4,6 +4,7 @@
 from conans import ConanFile, CMake, tools
 import os
 
+
 class sqlpp11Conan(ConanFile):
     name = "sqlpp11"
     version = "0.54"
@@ -28,14 +29,10 @@ class sqlpp11Conan(ConanFile):
         #cmake.definitions["BOOST_ROOT_DIR"] = self.deps_cpp_info["boost"].rootpath
         cmake.configure(source_dir="%s/sqlpp11" % self.source_folder)
         cmake.build()
-        cmake.test()
         cmake.install()
 
     def package(self):
         self.copy("*.h", dst="include", src="sqlpp11/include")
         #self.copy("*.cmake", dst="cmake", src="sqlpp11/cmake")
         self.copy("*.py", dst="scripts", src="sqlpp11/scripts", keep_path=False)
-
-    def package_id(self):
-        self.info.header_only()
-        #self.user_info.DLL2CPP = os.path.join(self.source_folder, "scripts", "ddl2cpp.py")
+        self.user_info.DLL2CPP = os.path.join(self.source_folder, "scripts", "ddl2cpp.py")

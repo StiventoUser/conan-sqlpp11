@@ -36,4 +36,6 @@ class sqlpp11Conan(ConanFile):
         self.copy("*.h", dst="include", src="sqlpp11/include")
         #self.copy("*.cmake", dst="cmake", src="sqlpp11/cmake")
         self.copy("*.py", dst="scripts", src="sqlpp11/scripts", keep_path=False)
+        
+    def package_info(self):
         self.user_info.DLL2CPP = os.path.join(self.source_folder, "scripts", "ddl2cpp.py")
